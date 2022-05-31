@@ -97,6 +97,7 @@ class fasterrcnn_mobilenet_v3_large_fpn:
     def __init__(self):
         self.model_name = 'mindee/fasterrcnn_mobilenet_v3_large_fpn'
         self.pretrained_model = from_hub(self.model_name).eval()
+        print("WARNING: This model requires installation of non-Python dependencies, see https://github.com/mindee/doctr#prerequisites")
 
     def predict(self, image: np.ndarray) -> str:
         pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
