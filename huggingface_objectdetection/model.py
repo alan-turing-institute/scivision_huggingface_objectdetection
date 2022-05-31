@@ -95,8 +95,7 @@ class hustvl_yolos_tiny:
         
 class fasterrcnn_mobilenet_v3_large_fpn:
     def __init__(self):
-        self.model_name = 'mindee/fasterrcnn_mobilenet_v3_large_fpn'
-        self.pretrained_model = from_hub(self.model_name).eval()
+        self.pretrained_model = from_hub('mindee/fasterrcnn_mobilenet_v3_large_fpn').eval()
         print("WARNING: This model requires installation of non-Python dependencies, see https://github.com/mindee/doctr#prerequisites")
 
     def predict(self, image: np.ndarray) -> str:
