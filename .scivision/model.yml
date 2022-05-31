@@ -32,3 +32,9 @@ models:
         call: predict
         args:
             X: image
+  - model: facebook_detr_resnet_50_dc5
+    args: None
+    prediction_fn:
+        call: predict
+        args:
+            X: image
