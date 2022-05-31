@@ -1,0 +1,1 @@
+from .model import facebook_detr_resnet_50
