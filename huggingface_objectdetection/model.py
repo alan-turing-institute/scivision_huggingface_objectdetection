@@ -79,3 +79,12 @@ class facebook_detr_resnet_50_dc5:
 
     def predict(self, image: np.ndarray) -> str:
         return tidy_predict(self, image)
+        
+        
+class hustvl_yolos_tiny:
+    def __init__(self):
+        self.model_name = 'hustvl/yolos-tiny'
+        self.pretrained_model, self.feature_extractor = build_yolos_model(self.model_name)
+
+    def predict(self, image: np.ndarray) -> str:
+        return tidy_predict(self, image)
