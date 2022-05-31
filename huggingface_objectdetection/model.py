@@ -43,3 +43,12 @@ class hustvl_yolos_small:
 
     def predict(self, image: np.ndarray) -> str:
         return tidy_predict(self, image)
+        
+        
+class detr_doc_table_detection:
+    def __init__(self):
+        self.model_name = 'TahaDouaji/detr-doc-table-detection'
+        self.pretrained_model, self.feature_extractor = build_detr_model(self.model_name)
+
+    def predict(self, image: np.ndarray) -> str:
+        return tidy_predict(self, image)    

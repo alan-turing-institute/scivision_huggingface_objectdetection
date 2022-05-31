@@ -14,3 +14,9 @@ models:
         call: predict
         args:
             X: image
+  - model: detr_doc_table_detection
+    args: None
+    prediction_fn:
+        call: predict
+        args:
+            X: image
