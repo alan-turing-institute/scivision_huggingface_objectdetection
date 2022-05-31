@@ -22,7 +22,7 @@ def build_detr_model(model_name: str):
 class facebook_detr_resnet_50:
     def __init__(self):
         self.model_name = 'facebook/detr-resnet-50'
-        self.pretrained_model, self.feature_extractor = build_deit_model(self.model_name)
+        self.pretrained_model, self.feature_extractor = build_detr_model(self.model_name)
 
     def predict(self, image: np.ndarray) -> str:
         return tidy_predict(self, image)
