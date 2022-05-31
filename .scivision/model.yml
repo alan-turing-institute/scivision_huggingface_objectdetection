@@ -8,3 +8,9 @@ models:
         call: predict
         args:
             X: image
+  - model: hustvl_yolos_small
+    args: None
+    prediction_fn:
+        call: predict
+        args:
+            X: image

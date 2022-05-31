@@ -1,7 +1,9 @@
 import numpy as np
 from PIL import Image
 from transformers import (DetrFeatureExtractor,
-                          DetrForObjectDetection
+                          DetrForObjectDetection,
+                          YolosFeatureExtractor,
+                          YolosForObjectDetection
                          )
                          
                          
@@ -18,11 +20,26 @@ def build_detr_model(model_name: str):
     features = DetrFeatureExtractor.from_pretrained(model_name)
     return model, features
     
+
+def build_yolos_model(model_name: str):
+    model = YolosForObjectDetection.from_pretrained(model_name)
+    features = YolosFeatureExtractor.from_pretrained(model_name)
+    return model, features
+    
     
 class facebook_detr_resnet_50:
     def __init__(self):
         self.model_name = 'facebook/detr-resnet-50'
         self.pretrained_model, self.feature_extractor = build_detr_model(self.model_name)
+
+    def predict(self, image: np.ndarray) -> str:
+        return tidy_predict(self, image)
+        
+        
+class hustvl_yolos_small:
+    def __init__(self):
+        self.model_name = 'hustvl/yolos-small'
+        self.pretrained_model, self.feature_extractor = build_yolos_model(self.model_name)
 
     def predict(self, image: np.ndarray) -> str:
         return tidy_predict(self, image)
