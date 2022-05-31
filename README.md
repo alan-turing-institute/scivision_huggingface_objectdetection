@@ -7,6 +7,7 @@ Via the scivision API, the [top 10 downloaded Image Classification models from H
 1. [facebook_detr_resnet_50](https://huggingface.co/facebook/detr-resnet-50)
 2. [hustvl_yolos_small](https://huggingface.co/hustvl/yolos-small)
 3. [detr_doc_table_detection](https://huggingface.co/TahaDouaji/detr-doc-table-detection)
+4. [detr_resnet_101](https://huggingface.co/facebook/detr-resnet-101)
 
 Models in this list can be loaded and used on data with a few lines of code, e.g.
 

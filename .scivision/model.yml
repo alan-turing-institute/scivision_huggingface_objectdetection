@@ -20,3 +20,9 @@ models:
         call: predict
         args:
             X: image
+  - model: detr_resnet_101
+    args: None
+    prediction_fn:
+        call: predict
+        args:
+            X: image
