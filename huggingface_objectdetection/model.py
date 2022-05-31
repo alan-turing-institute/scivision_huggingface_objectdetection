@@ -60,4 +60,13 @@ class detr_resnet_101:
         self.pretrained_model, self.feature_extractor = build_detr_model(self.model_name)
 
     def predict(self, image: np.ndarray) -> str:
-        return tidy_predict(self, image)    
+        return tidy_predict(self, image)
+        
+        
+class hustvl_yolos_base:
+    def __init__(self):
+        self.model_name = 'hustvl/yolos-base'
+        self.pretrained_model, self.feature_extractor = build_yolos_model(self.model_name)
+
+    def predict(self, image: np.ndarray) -> str:
+        return tidy_predict(self, image)
