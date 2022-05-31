@@ -54,7 +54,7 @@ class detr_doc_table_detection:
         return tidy_predict(self, image)
         
         
-class detr_resnet_101:
+class facebook_detr_resnet_101:
     def __init__(self):
         self.model_name = 'facebook/detr-resnet-101'
         self.pretrained_model, self.feature_extractor = build_detr_model(self.model_name)

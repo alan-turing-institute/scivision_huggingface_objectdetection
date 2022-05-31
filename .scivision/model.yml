@@ -20,7 +20,7 @@ models:
         call: predict
         args:
             X: image
-  - model: detr_resnet_101
+  - model: facebook_detr_resnet_101
     args: None
     prediction_fn:
         call: predict
