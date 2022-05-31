@@ -2,7 +2,7 @@
 
 Model repository for the [scivision](https://scivision.readthedocs.io/) project that enables loading of object detection models from [Hugging Face](https://huggingface.co/models?pipeline_tag=object-detection&sort=downloads).
 
-Via the scivision API, the [top 10 downloaded Image Classification models from Hugging Face](https://huggingface.co/models?pipeline_tag=object-detection&sort=downloads) (of models with a model card, last updated 31st May 2022) can be installed, loaded and run. The list of models is as follows:
+Via the scivision API, some of the [top downloaded object detection models from Hugging Face](https://huggingface.co/models?pipeline_tag=object-detection&sort=downloads) (of models with a model card, last updated 31st May 2022) can be installed, loaded and run. The list of models is as follows:
 
 1. [facebook_detr_resnet_50](https://huggingface.co/facebook/detr-resnet-50)
 2. [hustvl_yolos_small](https://huggingface.co/hustvl/yolos-small)
