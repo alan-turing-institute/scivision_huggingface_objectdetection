@@ -1,8 +1,8 @@
-from doctr.models.obj_detection.factory import from_hub
+# from doctr.models.obj_detection.factory import from_hub
 import numpy as np
 from PIL import Image
-import torch
-from torchvision.transforms import Compose, ConvertImageDtype, PILToTensor
+# import torch
+# from torchvision.transforms import Compose, ConvertImageDtype, PILToTensor
 from transformers import (DetrFeatureExtractor,
                           DetrForObjectDetection,
                           YolosFeatureExtractor,
@@ -93,20 +93,20 @@ class hustvl_yolos_tiny:
         return tidy_predict(self, image)
         
         
-class fasterrcnn_mobilenet_v3_large_fpn:
-    def __init__(self):
-        self.pretrained_model = from_hub('mindee/fasterrcnn_mobilenet_v3_large_fpn').eval()
-        print("WARNING: This model requires installation of non-Python dependencies, see https://github.com/mindee/doctr#prerequisites")
-
-    def predict(self, image: np.ndarray) -> str:
-        pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
-        # Preprocessing
-        transform = Compose([
-            PILToTensor(),
-            ConvertImageDtype(torch.float32),
-        ])
-        input_tensor = transform(pillow_image).unsqueeze(0)
-        # Inference
-        with torch.inference_mode():
-            output = self.pretrained_model(input_tensor)
-        return output
+# class fasterrcnn_mobilenet_v3_large_fpn:
+#     def __init__(self):
+#         self.pretrained_model = from_hub('mindee/fasterrcnn_mobilenet_v3_large_fpn').eval()
+#         print("WARNING: This model requires installation of non-Python dependencies, see https://github.com/mindee/doctr#prerequisites")
+# 
+#     def predict(self, image: np.ndarray) -> str:
+#         pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
+#         # Preprocessing
+#         transform = Compose([
+#             PILToTensor(),
+#             ConvertImageDtype(torch.float32),
+#         ])
+#         input_tensor = transform(pillow_image).unsqueeze(0)
+#         # Inference
+#         with torch.inference_mode():
+#             output = self.pretrained_model(input_tensor)
+#         return output

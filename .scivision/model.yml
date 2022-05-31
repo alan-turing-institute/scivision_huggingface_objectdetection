@@ -44,9 +44,9 @@ models:
         call: predict
         args:
             X: image
-  - model: fasterrcnn_mobilenet_v3_large_fpn
-    args: None
-    prediction_fn:
-        call: predict
-        args:
-            X: image
+  # - model: fasterrcnn_mobilenet_v3_large_fpn
+  #   args: None
+  #   prediction_fn:
+  #       call: predict
+  #       args:
+  #           X: image
