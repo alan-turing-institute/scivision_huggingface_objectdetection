@@ -1,4 +1,5 @@
 pillow
+python-doctr[torch]
 torchvision
 transformers
 transformers[torch]

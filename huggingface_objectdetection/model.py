@@ -1,5 +1,8 @@
+from doctr.models.obj_detection.factory import from_hub
 import numpy as np
 from PIL import Image
+import torch
+from torchvision.transforms import Compose, ConvertImageDtype, PILToTensor
 from transformers import (DetrFeatureExtractor,
                           DetrForObjectDetection,
                           YolosFeatureExtractor,
@@ -88,3 +91,22 @@ class hustvl_yolos_tiny:
 
     def predict(self, image: np.ndarray) -> str:
         return tidy_predict(self, image)
+        
+        
+class fasterrcnn_mobilenet_v3_large_fpn:
+    def __init__(self):
+        self.model_name = 'mindee/fasterrcnn_mobilenet_v3_large_fpn'
+        self.pretrained_model = from_hub(self.model_name).eval()
+
+    def predict(self, image: np.ndarray) -> str:
+        pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
+        # Preprocessing
+        transform = Compose([
+            PILToTensor(),
+            ConvertImageDtype(torch.float32),
+        ])
+        input_tensor = transform(pillow_image).unsqueeze(0)
+        # Inference
+        with torch.inference_mode():
+            output = self.pretrained_model(input_tensor)
+        return output
