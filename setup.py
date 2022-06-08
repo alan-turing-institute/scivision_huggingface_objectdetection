@@ -10,7 +10,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="huggingface_objectdetection",
-    version="0.0.1",
+    version="0.0.2",
     description="scivision plugin for Hugging Face object detection",
     author="Ed Chalstrey",
     author_email="echalstrey@turing.ac.uk",
