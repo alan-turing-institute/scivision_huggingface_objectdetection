@@ -14,9 +14,11 @@ from transformers import (DetrFeatureExtractor,
 def tidy_predict(self, image: np.ndarray) -> list:
     """Returns bounding boxes that can be superimposed onto an image"""
     pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
+    feature_extractor = self.feature_extractor(images=pillow_image, return_tensors="pt")
+    model = self.pretrained_model(**feature_extractor)
     object_detector =  pipeline("object-detection",
-                                model = self.pretrained_model(**inputs),
-                                feature_extractor = self.feature_extractor(images=pillow_image, return_tensors="pt")
+                                model = model,
+                                feature_extractor = feature_extractor)
                                )
     return object_detector(pillow_image)
     
