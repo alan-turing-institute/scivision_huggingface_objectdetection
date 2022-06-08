@@ -6,16 +6,19 @@ from PIL import Image
 from transformers import (DetrFeatureExtractor,
                           DetrForObjectDetection,
                           YolosFeatureExtractor,
-                          YolosForObjectDetection
+                          YolosForObjectDetection,
+                          pipeline
                          )
                          
                          
-def tidy_predict(self, image: np.ndarray) -> str:
-    """Gives the top prediction for the provided image"""
+def tidy_predict(self, image: np.ndarray) -> list:
+    """Returns bounding boxes that can be superimposed onto an image"""
     pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
-    inputs = self.feature_extractor(images=pillow_image, return_tensors="pt")
-    outputs = self.pretrained_model(**inputs)
-    return outputs
+    object_detector =  pipeline("object-detection",
+                                model = self.pretrained_model(**inputs),
+                                feature_extractor = self.feature_extractor(images=pillow_image, return_tensors="pt")
+                               )
+    return object_detector(pillow_image)
     
     
 def build_detr_model(model_name: str):
