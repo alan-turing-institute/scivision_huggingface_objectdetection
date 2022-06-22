@@ -2,6 +2,7 @@ pillow
 python-doctr
 python-doctr[torch]
 tensorflow-addons
+timm
 torchvision
 transformers
 transformers[torch]
