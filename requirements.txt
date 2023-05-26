@@ -3,7 +3,7 @@ python-doctr==0.6.0
 # python-doctr[torch] # adds torch and torchvision
 torch
 torchvision
-tensorflow-addons
+#tensorflow-addons
 timm
 torchvision
 transformers
