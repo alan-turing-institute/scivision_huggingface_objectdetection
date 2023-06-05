@@ -1,22 +1,15 @@
-pillow
-python-doctr==0.6.0
-# python-doctr[torch] # adds torch and torchvision
-torch
-torchvision
-#tensorflow-addons
-timm
-torchvision
-transformers
-# transformers[torch] # just the torch package
-torch
-# transformers[tf-cpu] # "tensorflow-cpu", "onnxconverter-common", "tf2onnx", "tensorflow-text", "keras-nlp"
-tensorflow-cpu
-onnxconverter-common
-tf2onnx
-tensorflow-text
-keras-nlp
-# transformers[flax] # "jax", "jaxlib", "flax", "optax"
+flax
 jax
 jaxlib
-flax
+keras-nlp
+onnxconverter-common
 optax
+pillow
+python-doctr==0.6.0
+#tensorflow-cpu
+tensorflow-text
+tf2onnx
+timm
+torch
+torchvision
+transformers
