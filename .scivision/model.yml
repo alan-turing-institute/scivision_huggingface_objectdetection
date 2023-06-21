@@ -1,5 +1,5 @@
 name: huggingface_objectdetection
-url: https://github.com/IFenton/scivision_huggingface_objectdetection
+url: https://github.com/alan-turing-institute/scivision_huggingface_objectdetection
 import: huggingface_objectdetection
 models:
   - model: facebook_detr_resnet_50
